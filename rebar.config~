@@ -1,0 +1,19 @@
+%%-*- mode: erlang -*-
+
+%%{post_hooks, [{'get-deps', "git submodule update --init --recursive"},
+%%              {'get-deps', "git submodule foreach git pull origin master"}
+%%             ]}.
+%%{i,"deps/amqp_client/include"}.
+
+{erl_opts, [
+             {parse_transform, lager_transform},
+             {i,"libs"}
+           ]}.
+
+{deps, [
+       {lager, ".*",     {git, "git://github.com/basho/lager.git", "master"}},
+       {cowboy, ".*",    {git, "git://github.com/extend/cowboy.git", "master"}},
+       {bullet, ".*",    {git, "git://github.com/extend/bullet.git", "master"}},
+       {mimetypes, ".*", {git, "git://github.com/spawngrid/mimetypes.git", "master"}},
+       {jsx, ".*",       {git, "git://github.com/talentdeficit/jsx.git", "master"}}
+]}.
